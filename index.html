@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя страничка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.5s, color 0.5s;
+            padding-top: 50px; /* Отступ сверху для кнопки смены темы */
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1, p {
+            margin: 0;
+            padding: 10px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: 2px solid var(--text-color);
+            border-radius: 25px; /* Овальные кнопки */
+            color: var(--text-color);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .buttons a:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            padding: 10px;
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--text-color);
+            border-radius: 50%; /* Круглая кнопка */
+            background-color: transparent;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        .projects {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .projects ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .projects li {
+            margin: 10px 0;
+        }
+
+        .telegram-footer {
+            margin-top: 40px;
+        }
+
+        .telegram-footer a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid var(--text-color);
+            border-radius: 25px;
+            color: var(--text-color);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .telegram-footer a:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+
+    <div class="avatar">
+        <img src="https://i.postimg.cc/0Q81k7gg/photo-2024-08-12-22-45-53.jpg" alt="Avatar">
+    </div>
+    <h1>Ваш Ник</h1>
+    <p>Краткая информация о вас</p>
+    <div class="buttons">
+        <a href="https://x.com" target="_blank">X</a>
+        <a href="https://t.me/windows11eror" target="_blank">Telegram</a>
+        <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
+    </div>
+
+    <div class="projects">
+        <h2>Мои проекты</h2>
+        <ul>
+            <strong>Тут покачто ничего нет</strong>
+            
+            <!-- Добавьте больше проектов по мере необходимости -->
+        </ul>
+    </div>
+
+    <div class="telegram-footer">
+        <a href="https://t.me/me_dd_local_host" target="_blank">Мой Telegram-канал</a>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            if (currentTheme === "dark") {
+                document.documentElement.removeAttribute("data-theme");
+            } else {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        }
+    </script>
+</body>
+</html>
