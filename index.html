@@ -18,22 +18,17 @@
             transition: background-color 0.5s, color 0.5s;
             padding: 20px;
             box-sizing: border-box;
+            position: relative;
         }
 
         :root {
             --bg-color: #ffffff;
             --text-color: #000000;
-            --card-bg-color: #f7f7f7; /* Цвет фона карточек в светлой теме */
-            --card-bg-color-dark: #121212; /* Фон карточек в темной теме */
-            --card-border-color: #000000; /* Светлая тема - цвет обводки карточек */
-            --card-border-color-dark: #ffffff; /* Цвет обводки в темной теме */
         }
 
         [data-theme="dark"] {
             --bg-color: #121212;
             --text-color: #ffffff;
-            --card-bg-color: var(--card-bg-color-dark);
-            --card-border-color: var(--card-border-color-dark);
         }
 
         .avatar {
@@ -96,47 +91,8 @@
             color: var(--bg-color);
         }
 
-        .projects {
-            margin-top: 40px;
-            text-align: center;
-            width: 100%;
-            max-width: 400px; /* Ограничение ширины для карточек */
-        }
-
-        .card {
-            background-color: var(--card-bg-color);
-            border: 2px solid var(--card-border-color); /* Обводка карточек светлой темы */
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
-            transition: transform 0.3s;
-        }
-
-        [data-theme="dark"] .card {
-            border: 2px solid var(--card-border-color-dark); /* Обводка карточек темной темы */
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
-            width: 100px; /* Ширина изображения */
-            height: 100px; /* Высота изображения */
-            object-fit: cover;
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
-        }
-
-        .card-content {
-            padding: 15px;
-            flex: 1; /* Заполнение оставшегося пространства */
-        }
-
         .telegram-footer {
-            margin-top: 20px; /* Подняли кнопку Telegram-канала */
+            margin-top: 48vh; /* Отступ сверху в 50% высоты видимого экрана */
         }
 
         .telegram-footer a {
@@ -165,24 +121,6 @@
     <div class="buttons">
         <a href="https://t.me/windows11eror" target="_blank">Telegram</a>
         <a href="https://github.com/Kot2011fjdjfj" target="_blank">GitHub</a>
-    </div>
-
-    <div class="projects">
-        <h2>Мои проекты</h2>
-        <div class="card">
-            <a href="https://ibb.co/HYxyVcJ"><img src="https://i.ibb.co/HYxyVcJ/i-5.jpg" alt="i-5" border="0"></a>
-            <div class="card-content">
-                <strong>Мой сайт типо</strong>
-                <p>вы на нем типо</p>
-            </div>
-        </div>
-        <div class="card">
-            <a href="https://ibb.co/vmqFxPy"><img src="https://i.ibb.co/vmqFxPy/telegram-logo.png" alt="telegram-logo" border="0"></a>
-            <div class="card-content">
-                <strong>Telegram боты </strong>
-                <p>Набор простых телеграмм ботов.</p>
-            </div>
-        </div>
     </div>
 
     <div class="telegram-footer">
