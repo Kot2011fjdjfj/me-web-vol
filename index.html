@@ -37,6 +37,16 @@
             border-radius: 50%;
             overflow: hidden;
             margin-bottom: 20px;
+            animation: scaleIn 0.5s forwards; 
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
         }
 
         .avatar img {
@@ -48,25 +58,67 @@
         h1, p {
             margin: 0;
             padding: 10px;
+            opacity: 0; 
+            transform: translateY(-20px); 
+            animation: fadeIn 0.5s forwards; 
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        .about-me {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid var(--text-color);
+            border-radius: 10px;
+            width: 300px;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: slideIn 0.5s forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .buttons {
             margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .buttons a {
             text-decoration: none;
-            margin: 0 10px;
+            margin: 10px 0; /* Отступы между кнопками */
             padding: 10px 20px;
             border: 2px solid var(--text-color);
             border-radius: 25px;
             color: var(--text-color);
-            transition: background-color 0.3s, border-color 0.3s;
+            transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+            animation: buttonPop 0.5s forwards;
+        }
+
+        @keyframes buttonPop {
+            from {
+                transform: scale(0.8);
+            }
+            to {
+                transform: scale(1);
+            }
         }
 
         .buttons a:hover {
             background-color: var(--text-color);
             color: var(--bg-color);
+            transform: scale(1.1); 
         }
 
         .theme-toggle {
@@ -84,6 +136,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            animation: fadeIn 0.5s forwards; 
         }
 
         .theme-toggle:hover {
@@ -92,7 +145,7 @@
         }
 
         .telegram-footer {
-            margin-top: 48vh; /* Отступ сверху в 50% высоты видимого экрана */
+            margin-top: 20px; /* Отступ для нижней ссылки */
         }
 
         .telegram-footer a {
@@ -102,6 +155,9 @@
             border-radius: 25px;
             color: var(--text-color);
             transition: background-color 0.3s, border-color 0.3s;
+            opacity: 0; 
+            transform: translateY(20px);
+            animation: fadeIn 0.5s forwards; 
         }
 
         .telegram-footer a:hover {
@@ -118,6 +174,12 @@
     </div>
     <h1>@windows11error</h1>
     <p>n_n🍀💤</p>
+    
+    <div class="about-me">
+        <h2>Обо мне</h2>
+        <p>Пишу на C#, GO, Python, могу работать с протоколами proxy(SOCKS5 HTTP), dns серверов, и делаю консольные утилиты.</p>
+    </div>
+
     <div class="buttons">
         <a href="https://t.me/windows11eror" target="_blank">Telegram</a>
         <a href="https://github.com/Kot2011fjdjfj" target="_blank">GitHub</a>
@@ -136,6 +198,14 @@
                 document.documentElement.setAttribute("data-theme", "dark");
             }
         }
+
+        // Запустить анимацию заголовков и текста после загрузки
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('h1, p, .about-me, .telegram-footer a');
+            elements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
     </script>
 </body>
 </html>
